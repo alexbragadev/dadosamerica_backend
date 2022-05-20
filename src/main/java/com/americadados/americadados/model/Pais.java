@@ -12,17 +12,37 @@ public class Pais implements Serializable {
     private String nome;
     private String urlImg;
     private String descrisao;
+    private String sigla;
+    private String countryId;
     @Column(nullable = false, updatable = false)
     private String PaisCode;
 
     public Pais() {
     }
 
-    public Pais(String nome, String urlImg, String descrisao, String paisCode) {
+    public Pais(String nome, String urlImg, String descrisao, String sigla, String countryId, String paisCode) {
         this.nome = nome;
         this.urlImg = urlImg;
         this.descrisao = descrisao;
+        this.sigla = sigla;
+        this.countryId = countryId;
         PaisCode = paisCode;
+    }
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
+    public String getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(String countryId) {
+        this.countryId = countryId;
     }
 
     public Long getId() {
@@ -72,6 +92,8 @@ public class Pais implements Serializable {
                 ", nome='" + nome + '\'' +
                 ", urlImg='" + urlImg + '\'' +
                 ", descrisao='" + descrisao + '\'' +
+                ", sigla='" + sigla + '\'' +
+                ", countryId='" + countryId + '\'' +
                 '}';
     }
 }

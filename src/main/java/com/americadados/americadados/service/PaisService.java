@@ -3,6 +3,7 @@ package com.americadados.americadados.service;
 import com.americadados.americadados.exception.UserNotFoundException;
 import com.americadados.americadados.model.Pais;
 import com.americadados.americadados.repo.PaisRepo;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -24,7 +25,7 @@ public class PaisService {
     }
 
     public List<Pais> findAllPais() {
-        return paisRepo.findAll();
+        return paisRepo.findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public Pais updatePais(Pais pais) {

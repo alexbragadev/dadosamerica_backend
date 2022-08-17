@@ -17,12 +17,13 @@ public class Noticia implements Serializable {
     private String categoria;
     private String fonte;
     private Date dataNoticia;
+    private String linkDaNoticia;
 
     public Noticia() {
 
     }
 
-    public Noticia(String titulo, String urlImg, String resumo, String texto, Date dataNoticia, String categoria, String fonte) {
+    public Noticia(String titulo, String urlImg, String resumo, String texto, Date dataNoticia, String categoria, String fonte, String linkDaNoticia) {
         this.titulo = titulo;
         this.urlImg = urlImg;
         this.resumo = resumo;
@@ -30,6 +31,15 @@ public class Noticia implements Serializable {
         this.dataNoticia = dataNoticia;
         this.categoria = categoria;
         this.fonte = fonte;
+        this.linkDaNoticia = linkDaNoticia;
+    }
+
+    public String getLinkDaNoticia() {
+        return linkDaNoticia;
+    }
+
+    public void setLinkDaNoticia(String linkDaNoticia) {
+        this.linkDaNoticia = linkDaNoticia;
     }
 
     public String getFonte() {
@@ -105,9 +115,11 @@ public class Noticia implements Serializable {
                 ", urlImg='" + urlImg + '\'' +
                 ", resumo='" + resumo + '\'' +
                 ", texto='" + texto + '\'' +
-                ", dataNoticia=" + dataNoticia +
                 ", categoria='" + categoria + '\'' +
                 ", fonte='" + fonte + '\'' +
+                ", dataNoticia=" + dataNoticia +
+                ", linkDaNoticia='" + linkDaNoticia + '\'' +
                 '}';
     }
+
 }

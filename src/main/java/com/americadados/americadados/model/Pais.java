@@ -94,6 +94,8 @@ public class Pais implements Serializable {
                 ", descrisao='" + descrisao + '\'' +
                 ", sigla='" + sigla + '\'' +
                 ", countryId='" + countryId + '\'' +
+                ", PaisCode='" + PaisCode + '\'' +
                 '}';
     }
+
 }

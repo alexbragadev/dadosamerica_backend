@@ -35,7 +35,7 @@ public class UserResource {
 
         for (User usuario : usuarios) {
             if (usuario.getPassword().equals(user.getPassword()) && usuario.getEmail().equals(user.getEmail())) {
-                return ResponseEntity.ok(user);
+                return ResponseEntity.ok(usuario);
             }
         }
         return null;

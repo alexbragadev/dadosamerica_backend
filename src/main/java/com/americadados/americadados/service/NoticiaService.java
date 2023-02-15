@@ -8,6 +8,8 @@ import com.americadados.americadados.repo.NoticiaRepo;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -38,6 +40,12 @@ public class NoticiaService {
     }
 
     public Noticia updateNoticia(Noticia noticia) {
+
+        Date dataConverter = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        //dataConverter = formato.parse(noticia.getDataNoticia());
+        noticia.getDataNoticia();
+
         return noticiaRepo.save(noticia);
     }
 

@@ -40,12 +40,6 @@ public class NoticiaService {
     }
 
     public Noticia updateNoticia(Noticia noticia) {
-
-        Date dataConverter = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
-        //dataConverter = formato.parse(noticia.getDataNoticia());
-        noticia.getDataNoticia();
-
         return noticiaRepo.save(noticia);
     }
 

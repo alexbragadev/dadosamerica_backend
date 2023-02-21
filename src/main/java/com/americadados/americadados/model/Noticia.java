@@ -2,6 +2,8 @@ package com.americadados.americadados.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -55,8 +57,12 @@ public class Noticia implements Serializable {
     }
 
     public void setDataNoticia(Date dataNoticia) {
-        dataNoticia = new java.sql.Date(System.currentTimeMillis());
-        this.dataNoticia = dataNoticia;
+        if (dataNoticia != null) {
+            this.dataNoticia = dataNoticia;
+        } else {
+            dataNoticia = new java.sql.Date(System.currentTimeMillis());
+            this.dataNoticia = dataNoticia;
+        }
     }
 
     public Long getId() {
